@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Health assessment &amp; daily feeds · Smart Livestock Asset Stack</title>
+<meta name="description" content="Independent farm-to-market whitepaper: biometric passport, registry, health feeds, PVARA tokens, and livestock grid for Pakistan."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/livestock-smart-asset-stack-whitepaper/assets/site.css"/>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script defer src="/livestock-smart-asset-stack-whitepaper/assets/site.js"></script>
+</head>
+<body class="is-page">
+<a class="skip" href="#main">Skip to content</a>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="/livestock-smart-asset-stack-whitepaper/">
+      <span class="brand-mark" aria-hidden="true">SL</span>
+      <span class="brand-text">
+        <strong>Smart Livestock</strong>
+        <small>Asset Stack · Farm Ops View</small>
+      </span>
+    </a>
+    <div class="topbar-actions">
+      <span class="ear-tag">Independent</span>
+      <a class="btn ghost" href="/livestock-smart-asset-stack-whitepaper/pages/download-pdf/">PDF</a>
+      <a class="btn solid" href="/livestock-smart-asset-stack-whitepaper/pages/executive-summary/">Enter yard</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" data-nav-toggle>☰</button>
+  </header>
+
+  <aside class="rail" data-rail>
+    <p class="rail-kicker">Herd map</p>
+    <div class="nav-group"><p class="nav-group-title">Whitepaper</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/cover-and-how-to-use/"><span class="dot"></span>Cover &amp; how to use</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/download-pdf/"><span class="dot"></span>Download PDF</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/executive-summary/"><span class="dot"></span>Executive summary</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/the-problem/"><span class="dot"></span>The problem</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/field-identity-animal-passport-and-paits/"><span class="dot"></span>Field identity: Animal Passport &amp; PAITS</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/registry-company/"><span class="dot"></span>Registry company</a></li><li><a class="nav-link active" href="/livestock-smart-asset-stack-whitepaper/pages/health-assessment-and-daily-feeds/"><span class="dot"></span>Health assessment &amp; daily feeds</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/pvara-tokenization/"><span class="dot"></span>PVARA tokenization</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/livestock-and-poultry-grid/"><span class="dot"></span>Livestock &amp; poultry grid</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/end-to-end-architecture-and-flows/"><span class="dot"></span>End-to-end architecture &amp; flows</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/how-to-achieve-it-roadmap/"><span class="dot"></span>How to achieve it: roadmap</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/risks-open-questions-and-research-agenda/"><span class="dot"></span>Risks, open questions &amp; research agenda</a></li></ul></div><div class="nav-group"><p class="nav-group-title">Author</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/about-the-author/"><span class="dot"></span>About the author</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/independence-and-disclaimer/"><span class="dot"></span>Independence &amp; disclaimer</a></li></ul></div><div class="nav-group"><p class="nav-group-title">Back matter</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/references-and-further-reading/"><span class="dot"></span>References &amp; further reading</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/glossary/"><span class="dot"></span>Glossary</a></li></ul></div>
+    <div class="rail-foot">
+      <p>Ammar Jamshed · Independent</p>
+      <a href="https://livestockmon.gitbook.io/smart-livestock-asset-stack/" target="_blank" rel="noopener">Also on GitBook</a>
+    </div>
+  </aside>
+
+  <main id="main" class="main">
+    <article class="paper"><h1>Health assessment &amp; daily feeds</h1>
+<aside class="callout callout-warning"><p><strong>L2 — Farm health rail (amber / hay).</strong> Barn notes and AI scores are the <em>raw feed</em>. Markets need a signed daily health grade — like an ear-tag that banks and token gates can read.</p>
+</aside>
+<h2 id="role-in-the-stack" tabindex="-1">Role in the stack</h2>
+<p>Think of this layer as the <strong>vet desk between the paddock and the market</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Farm side (inputs)</th>
+<th>Market side (outputs)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passport / farm-app health events</td>
+<td>Attested <strong>daily health feed</strong></td>
+</tr>
+<tr>
+<td>Local vet &amp; lab notes</td>
+<td>Grade <strong>A / B / C / Quarantine</strong></td>
+</tr>
+<tr>
+<td>Flock mortality &amp; feed flags</td>
+<td>Freeze / mint eligibility signals</td>
+</tr>
+</tbody>
+</table>
+<p>Proposed institutional path from the notebook: <strong>clinical credibility</strong> (e.g. AKUH standards path) plus <strong>public-health policy</strong> (Ministry of Health) with livestock / veterinary ministries. These are <strong>design counterparts</strong>, not claimed partners.</p>
+<div class="mermaid-wrap"><pre class="mermaid">%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'16px' }}}%%
+flowchart TB
+  RAW[Barn / passport<br/>health events] --> NORM[Normalize<br/>to farm schema]
+  NORM --> VET[Vet / lab<br/>attestation]
+  VET --> STD[Protocol check<br/>vs SLAS-HEALTH]
+  STD --> FEED[Daily health<br/>feed record]
+  FEED --> GATE{Grade OK?}
+  GATE -->|yes · green lane| TOK[Eligible for<br/>token / credit]
+  GATE -->|no · red pen| HOLD[Quarantine /<br/>remediate]
+  FEED --> SURV[MoH / livestock<br/>surveillance]
+  classDef barn fill:#E9F5EE,stroke:#1B4332,color:#081C15,stroke-width:2px
+  classDef yard fill:#FFF3CD,stroke:#B7791F,color:#5C3B00,stroke-width:2px
+  classDef gate fill:#D8F3DC,stroke:#2D6A4F,color:#081C15,stroke-width:2px
+  classDef ok fill:#95D5B2,stroke:#1B4332,color:#081C15,stroke-width:2px
+  classDef stop fill:#F8D7DA,stroke:#9B2226,color:#5C0008,stroke-width:2px
+  classDef sky fill:#D6EAF8,stroke:#1D6A9F,color:#0B3C5D,stroke-width:2px
+  class RAW,NORM barn
+  class VET,STD,FEED yard
+  class GATE gate
+  class TOK ok
+  class HOLD stop
+  class SURV sky
+</pre></div>
+<aside class="callout callout-success"><p><strong>Green lane</strong> = grade passes → credit / token mint may proceed.<br>
+<strong>Red pen</strong> = quarantine → freeze transfers until cleared.</p>
+</aside>
+<h2 id="two-cadences-(farm-clock)" tabindex="-1">Two cadences (farm clock)</h2>
+<table>
+<thead>
+<tr>
+<th>Cadence</th>
+<th>What the farm sees</th>
+<th>What the market uses it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Daily / near-daily</strong></td>
+<td>Mortality, feed intake flags, flock alerts, movement</td>
+<td>Outbreak alerts + token freeze</td>
+</tr>
+<tr>
+<td><strong>Periodic</strong></td>
+<td>Vaccination, lab panels, body condition, AI age/health scores</td>
+<td>Insurance bands + mint eligibility</td>
+</tr>
+</tbody>
+</table>
+<h2 id="feed-record-(ear-tag-style-stub)" tabindex="-1">Feed record (ear-tag style stub)</h2>
+<pre><code class="language-text">registry_id          # the animal / flock &quot;tag&quot;
+timestamp_utc
+metrics[]            # coded barn observations
+attestor_id          # vet / lab / protocol agent
+attestor_sig
+protocol_version     # e.g. SLAS-HEALTH-0.1
+grade                # A / B / C / Quarantine
+validity_until
+source_refs[]        # passport event IDs, lab report IDs
+</code></pre>
+<h2 id="who-does-what-on-the-farm-vs-in-town" tabindex="-1">Who does what on the farm vs in town</h2>
+<table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>On the farm / yard</th>
+<th>Does <strong>not</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Animal Passport / farm apps</td>
+<td>Capture raw signals &amp; history</td>
+<td>Issue market certificates alone</td>
+</tr>
+<tr>
+<td>Local vets / labs</td>
+<td>Attest what they see</td>
+<td>Set national protocol alone</td>
+</tr>
+<tr>
+<td>Standards partner (e.g. AKUH path)</td>
+<td>Protocol, audit, training</td>
+<td>Run every shed</td>
+</tr>
+<tr>
+<td>MoH + livestock ministries</td>
+<td>Outbreak / zoonoses rails</td>
+<td>Replace farm capture</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout-danger"><p><strong>Why this layer matters:</strong> a token that cannot be frozen when herd health collapses is a fiction sold to investors. L2 is the ethical core of the stack — the difference between a living asset and a paper cow.</p>
+</aside>
+</article>
+  </main>
+
+  <aside class="toc-rail"><nav class="page-toc" aria-label="On this page"><p class="toc-label">On this paddock</p><ul><li class="l2"><a href="#role-in-the-stack">Role in the stack</a></li><li class="l2"><a href="#two-cadences-(farm-clock)">Two cadences (farm clock)</a></li><li class="l2"><a href="#feed-record-(ear-tag-style-stub)">Feed record (ear-tag style stub)</a></li><li class="l2"><a href="#who-does-what-on-the-farm-vs-in-town">Who does what on the farm vs in town</a></li></ul></nav></aside>
+</div>
+<script>window.__SLAS_ACTIVE__="health-assessment-and-daily-feeds";window.__SLAS_BASE__="/livestock-smart-asset-stack-whitepaper";</script>
+</body>
+</html>

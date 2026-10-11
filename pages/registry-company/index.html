@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Registry company · Smart Livestock Asset Stack</title>
+<meta name="description" content="Independent farm-to-market whitepaper: biometric passport, registry, health feeds, PVARA tokens, and livestock grid for Pakistan."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/livestock-smart-asset-stack-whitepaper/assets/site.css"/>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script defer src="/livestock-smart-asset-stack-whitepaper/assets/site.js"></script>
+</head>
+<body class="is-page">
+<a class="skip" href="#main">Skip to content</a>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="/livestock-smart-asset-stack-whitepaper/">
+      <span class="brand-mark" aria-hidden="true">SL</span>
+      <span class="brand-text">
+        <strong>Smart Livestock</strong>
+        <small>Asset Stack · Farm Ops View</small>
+      </span>
+    </a>
+    <div class="topbar-actions">
+      <span class="ear-tag">Independent</span>
+      <a class="btn ghost" href="/livestock-smart-asset-stack-whitepaper/pages/download-pdf/">PDF</a>
+      <a class="btn solid" href="/livestock-smart-asset-stack-whitepaper/pages/executive-summary/">Enter yard</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" data-nav-toggle>☰</button>
+  </header>
+
+  <aside class="rail" data-rail>
+    <p class="rail-kicker">Herd map</p>
+    <div class="nav-group"><p class="nav-group-title">Whitepaper</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/cover-and-how-to-use/"><span class="dot"></span>Cover &amp; how to use</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/download-pdf/"><span class="dot"></span>Download PDF</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/executive-summary/"><span class="dot"></span>Executive summary</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/the-problem/"><span class="dot"></span>The problem</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/field-identity-animal-passport-and-paits/"><span class="dot"></span>Field identity: Animal Passport &amp; PAITS</a></li><li><a class="nav-link active" href="/livestock-smart-asset-stack-whitepaper/pages/registry-company/"><span class="dot"></span>Registry company</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/health-assessment-and-daily-feeds/"><span class="dot"></span>Health assessment &amp; daily feeds</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/pvara-tokenization/"><span class="dot"></span>PVARA tokenization</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/livestock-and-poultry-grid/"><span class="dot"></span>Livestock &amp; poultry grid</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/end-to-end-architecture-and-flows/"><span class="dot"></span>End-to-end architecture &amp; flows</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/how-to-achieve-it-roadmap/"><span class="dot"></span>How to achieve it: roadmap</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/risks-open-questions-and-research-agenda/"><span class="dot"></span>Risks, open questions &amp; research agenda</a></li></ul></div><div class="nav-group"><p class="nav-group-title">Author</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/about-the-author/"><span class="dot"></span>About the author</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/independence-and-disclaimer/"><span class="dot"></span>Independence &amp; disclaimer</a></li></ul></div><div class="nav-group"><p class="nav-group-title">Back matter</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/references-and-further-reading/"><span class="dot"></span>References &amp; further reading</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/glossary/"><span class="dot"></span>Glossary</a></li></ul></div>
+    <div class="rail-foot">
+      <p>Ammar Jamshed · Independent</p>
+      <a href="https://livestockmon.gitbook.io/smart-livestock-asset-stack/" target="_blank" rel="noopener">Also on GitBook</a>
+    </div>
+  </aside>
+
+  <main id="main" class="main">
+    <article class="paper"><h1>Registry company</h1>
+<aside class="callout callout-success"><p><strong>L1 — Legal spine.</strong> Your notes correctly struck “Access” and circled <strong>company</strong>. A query portal is not enough.</p>
+</aside>
+<h2 id="notebook-origin" tabindex="-1">Notebook origin</h2>
+<p>Pakistan needs a <strong>registry company</strong> — a legal person that issues and maintains animal / batch identities, governs who may read or write them, and can interface with custody (CDC sub) and health rails.</p>
+<h2 id="job-of-the-registry" tabindex="-1">Job of the registry</h2>
+<ol>
+<li>Accept <strong>promoted</strong> field IDs (Animal Passport / PAITS / peers)</li>
+<li>Issue a <strong>canonical registry key</strong> (system of record)</li>
+<li>Bind owner / aggregator KYC to that key</li>
+<li>Expose <strong>controlled APIs</strong> to banks, insurers, token issuers, and (later) market data agents</li>
+<li>Maintain dispute, re-tag, death, and transfer events</li>
+</ol>
+<div class="mermaid-wrap"><pre class="mermaid">sequenceDiagram
+  participant Farm as Farmer / aggregator
+  participant AP as Animal Passport / PAITS
+  participant REG as Registry company
+  participant BANK as Bank / insurer
+  participant CDC as CDC custody sub
+  Farm->>AP: Register / verify animal
+  AP->>REG: Promote ID + owner binding
+  REG->>REG: Issue canonical key + access ACL
+  BANK->>REG: Query eligibility / ownership
+  REG-->>BANK: Attested record (scoped)
+  REG->>CDC: Optional book-entry link for entitlements
+</pre></div>
+<h2 id="design-choices-to-settle-in-the-paper%E2%80%99s-pilot" tabindex="-1">Design choices to settle in the paper’s pilot</h2>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Options</th>
+<th>Lean for MVP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Legal form</td>
+<td>Section company / utility / concession</td>
+<td>Narrow-purpose company with clear public-interest charter</td>
+</tr>
+<tr>
+<td>ID source of truth</td>
+<td>Field app vs registry</td>
+<td><strong>Registry</strong> wins; field apps are edges</td>
+</tr>
+<tr>
+<td>Access model</td>
+<td>Open vs licensed queriers</td>
+<td>Licensed queriers (banks, insurers, issuers)</td>
+</tr>
+<tr>
+<td>CDC link</td>
+<td>Subsidiary vs special accounts</td>
+<td>Phased: accounts first, sub later if volume justifies</td>
+</tr>
+<tr>
+<td>Poultry vs cattle</td>
+<td>Per-animal vs batch IDs</td>
+<td>Cattle: per-head; poultry: <strong>batch / flock</strong> IDs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="must-have-data-fields-(minimum)" tabindex="-1">Must-have data fields (minimum)</h2>
+<ul>
+<li>Canonical registry ID</li>
+<li>Field keys (passport biometric ref, PAITS ID, ear tag)</li>
+<li>Species / breed / sex / approx. age or DOB estimate</li>
+<li>Owner / aggregator identifiers (CNIC / NTN as applicable)</li>
+<li>Status: active · transferred · dead · quarantined · disputed</li>
+<li>Last health grade pointer (to L2 feed)</li>
+<li>Audit log hash / version</li>
+</ul>
+<h2 id="failure-modes" tabindex="-1">Failure modes</h2>
+<ul>
+<li>Double registration across apps → <strong>merge rules</strong> and biometric match thresholds</li>
+<li>Owner disputes → escrow + local verification workflow</li>
+<li>Ghost animals for credit → mandatory field re-verify before token mint or large loans</li>
+</ul>
+</article>
+  </main>
+
+  <aside class="toc-rail"><nav class="page-toc" aria-label="On this page"><p class="toc-label">On this paddock</p><ul><li class="l2"><a href="#notebook-origin">Notebook origin</a></li><li class="l2"><a href="#job-of-the-registry">Job of the registry</a></li><li class="l2"><a href="#design-choices-to-settle-in-the-paper%E2%80%99s-pilot">Design choices to settle in the paper’s pilot</a></li><li class="l2"><a href="#must-have-data-fields-(minimum)">Must-have data fields (minimum)</a></li><li class="l2"><a href="#failure-modes">Failure modes</a></li></ul></nav></aside>
+</div>
+<script>window.__SLAS_ACTIVE__="registry-company";window.__SLAS_BASE__="/livestock-smart-asset-stack-whitepaper";</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Risks, open questions &amp; research agenda · Smart Livestock Asset Stack</title>
+<meta name="description" content="Independent farm-to-market whitepaper: biometric passport, registry, health feeds, PVARA tokens, and livestock grid for Pakistan."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/livestock-smart-asset-stack-whitepaper/assets/site.css"/>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script defer src="/livestock-smart-asset-stack-whitepaper/assets/site.js"></script>
+</head>
+<body class="is-page">
+<a class="skip" href="#main">Skip to content</a>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="/livestock-smart-asset-stack-whitepaper/">
+      <span class="brand-mark" aria-hidden="true">SL</span>
+      <span class="brand-text">
+        <strong>Smart Livestock</strong>
+        <small>Asset Stack · Farm Ops View</small>
+      </span>
+    </a>
+    <div class="topbar-actions">
+      <span class="ear-tag">Independent</span>
+      <a class="btn ghost" href="/livestock-smart-asset-stack-whitepaper/pages/download-pdf/">PDF</a>
+      <a class="btn solid" href="/livestock-smart-asset-stack-whitepaper/pages/executive-summary/">Enter yard</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" data-nav-toggle>☰</button>
+  </header>
+
+  <aside class="rail" data-rail>
+    <p class="rail-kicker">Herd map</p>
+    <div class="nav-group"><p class="nav-group-title">Whitepaper</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/cover-and-how-to-use/"><span class="dot"></span>Cover &amp; how to use</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/download-pdf/"><span class="dot"></span>Download PDF</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/executive-summary/"><span class="dot"></span>Executive summary</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/the-problem/"><span class="dot"></span>The problem</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/field-identity-animal-passport-and-paits/"><span class="dot"></span>Field identity: Animal Passport &amp; PAITS</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/registry-company/"><span class="dot"></span>Registry company</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/health-assessment-and-daily-feeds/"><span class="dot"></span>Health assessment &amp; daily feeds</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/pvara-tokenization/"><span class="dot"></span>PVARA tokenization</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/livestock-and-poultry-grid/"><span class="dot"></span>Livestock &amp; poultry grid</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/end-to-end-architecture-and-flows/"><span class="dot"></span>End-to-end architecture &amp; flows</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/how-to-achieve-it-roadmap/"><span class="dot"></span>How to achieve it: roadmap</a></li><li><a class="nav-link active" href="/livestock-smart-asset-stack-whitepaper/pages/risks-open-questions-and-research-agenda/"><span class="dot"></span>Risks, open questions &amp; research agenda</a></li></ul></div><div class="nav-group"><p class="nav-group-title">Author</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/about-the-author/"><span class="dot"></span>About the author</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/independence-and-disclaimer/"><span class="dot"></span>Independence &amp; disclaimer</a></li></ul></div><div class="nav-group"><p class="nav-group-title">Back matter</p><ul><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/references-and-further-reading/"><span class="dot"></span>References &amp; further reading</a></li><li><a class="nav-link" href="/livestock-smart-asset-stack-whitepaper/pages/glossary/"><span class="dot"></span>Glossary</a></li></ul></div>
+    <div class="rail-foot">
+      <p>Ammar Jamshed · Independent</p>
+      <a href="https://livestockmon.gitbook.io/smart-livestock-asset-stack/" target="_blank" rel="noopener">Also on GitBook</a>
+    </div>
+  </aside>
+
+  <main id="main" class="main">
+    <article class="paper"><h1>Risks, open questions &amp; research agenda</h1>
+<h2 id="material-risks" tabindex="-1">Material risks</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Why it matters</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vendor capture</td>
+<td>One app becomes de facto registry</td>
+<td>Registry as system of record; certify multiple edges</td>
+</tr>
+<tr>
+<td>Fake inventory</td>
+<td>Tokens on ghost animals</td>
+<td>Biometric re-verify; pledge graph; attestor liability</td>
+</tr>
+<tr>
+<td>Health theater</td>
+<td>Grades without audits</td>
+<td>Protocol + surprise audits + freeze hooks</td>
+</tr>
+<tr>
+<td>Premature listing</td>
+<td>PSX brand used before methodology mature</td>
+<td>Stage-1 information products first</td>
+</tr>
+<tr>
+<td>Regulatory fog</td>
+<td>Token class unclear</td>
+<td>Sandbox + counsel; no retail until clarity</td>
+</tr>
+<tr>
+<td>Farmer exclusion</td>
+<td>Digitization without access</td>
+<td>Free/low-cost capture; aggregator model; Urdu UX</td>
+</tr>
+<tr>
+<td>Zoonosis politics</td>
+<td>MoH vs livestock turf</td>
+<td>Explicit dual-ministry RACI</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-research-questions" tabindex="-1">Open research questions</h2>
+<ol>
+<li>What biometric FAR/FRR is acceptable for <strong>credit-scale</strong> mint gates in Pakistani field conditions (wet muzzle, dust, low light)?</li>
+<li>How should <strong>poultry batch IDs</strong> inherit and shed birds without breaking token accounting?</li>
+<li>Can PAITS keys and private biometric IDs be linked with privacy-preserving joins?</li>
+<li>What is the minimum disclosure pack for a PVARA-perimeter livestock token?</li>
+<li>Which PSX product type (data, index, listed) maximizes farmer benefit vs investor confusion?</li>
+<li>How do Islamic finance structures map onto fattening cycles and flock turns?</li>
+</ol>
+<h2 id="what-v2-of-this-whitepaper-should-add" tabindex="-1">What v2 of this whitepaper should add</h2>
+<ul>
+<li>Primary interviews (edge platform, PITB/PAITS, bank agri desk, insurer)</li>
+<li>A filled cost model for one district</li>
+<li>A worked example: 500 cattle fattening cycle through mint → feed → settle</li>
+<li>Comparative annex (India / EU cattle ID, commodity token precedents) with citations</li>
+</ul>
+<h2 id="honest-limit-of-v1" tabindex="-1">Honest limit of v1</h2>
+<p>This document is a <strong>design whitepaper</strong>, not an empirical evaluation and not a prospectus. Its job is to make the smart process legible enough that practitioners can agree — or disagree — in public.</p>
+</article>
+  </main>
+
+  <aside class="toc-rail"><nav class="page-toc" aria-label="On this page"><p class="toc-label">On this paddock</p><ul><li class="l2"><a href="#material-risks">Material risks</a></li><li class="l2"><a href="#open-research-questions">Open research questions</a></li><li class="l2"><a href="#what-v2-of-this-whitepaper-should-add">What v2 of this whitepaper should add</a></li><li class="l2"><a href="#honest-limit-of-v1">Honest limit of v1</a></li></ul></nav></aside>
+</div>
+<script>window.__SLAS_ACTIVE__="risks-open-questions-and-research-agenda";window.__SLAS_BASE__="/livestock-smart-asset-stack-whitepaper";</script>
+</body>
+</html>
