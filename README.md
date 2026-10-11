@@ -14,6 +14,7 @@ description: Independent whitepaper — Smart Livestock Asset Stack for Pakistan
 | **Status** | Independent research note (v1.0) |
 | **Stance** | Personal work — no institutional affiliation, endorsement, or mandate |
 | **Focus** | Pakistan livestock & poultry market infrastructure |
+| **Live GitBook** | [livestockmon.gitbook.io/smart-livestock-asset-stack](https://livestockmon.gitbook.io/smart-livestock-asset-stack/) |
 
 ---
 

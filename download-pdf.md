@@ -6,9 +6,11 @@ description: How readers download this whitepaper as PDF from GitBook
 
 This space is built for **GitBook** so readers can export a clean PDF of the whole whitepaper (or a single chapter).
 
+**Live site:** [https://livestockmon.gitbook.io/smart-livestock-asset-stack/](https://livestockmon.gitbook.io/smart-livestock-asset-stack/)
+
 ## For readers (on the published site)
 
-Once this space is published on GitBook with PDF export enabled:
+On the live GitBook site (enable PDF export in site customize if the button is missing):
 
 1. Open any page of the whitepaper on the live GitBook site.
 2. Use the page **Actions** control (near the page title).
