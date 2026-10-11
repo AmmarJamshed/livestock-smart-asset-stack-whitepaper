@@ -11,8 +11,12 @@ description: Independent whitepaper — Smart Livestock Asset Stack for Pakistan
 Independent research by **Ammar Jamshed** — no bank, exchange, ministry, or vendor allegiance.
 {% endhint %}
 
+{% hint style="success" %}
+**Primary reading site (livestock ops UX):** [ammarjamshed.github.io/livestock-smart-asset-stack-whitepaper](https://ammarjamshed.github.io/livestock-smart-asset-stack-whitepaper/)
+{% endhint %}
+
 {% hint style="info" %}
-**Live:** [livestockmon.gitbook.io/smart-livestock-asset-stack](https://livestockmon.gitbook.io/smart-livestock-asset-stack/) · Page Actions → **Export as PDF**
+**Also on GitBook:** [livestockmon.gitbook.io/smart-livestock-asset-stack](https://livestockmon.gitbook.io/smart-livestock-asset-stack/) · Page Actions → **Export as PDF**
 {% endhint %}
 
 | Farm metaphor | Stack layer | Job |
