@@ -8,10 +8,12 @@
   "license": "CC-BY-4.0",
   "scripts": {
     "build:site": "node build/site.mjs",
+    "build:pdf": "node build/pdf.mjs",
     "serve": "npx --yes serve site -l 4173"
   },
   "devDependencies": {
     "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^9.2.0"
+    "markdown-it-anchor": "^9.2.0",
+    "puppeteer": "^23.11.1"
   }
 }

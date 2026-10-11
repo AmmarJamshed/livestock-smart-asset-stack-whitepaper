@@ -5,11 +5,15 @@ description: How readers download this whitepaper as PDF from GitBook
 # Download PDF
 
 {% hint style="success" %}
-**Live site:** [https://livestockmon.gitbook.io/smart-livestock-asset-stack/](https://livestockmon.gitbook.io/smart-livestock-asset-stack/)
+**Farm-ops site:** [https://ammarjamshed.github.io/livestock-smart-asset-stack-whitepaper/](https://ammarjamshed.github.io/livestock-smart-asset-stack-whitepaper/)
 {% endhint %}
 
 {% hint style="info" %}
-PDF export is enabled on this site’s page Actions (look for **Export as PDF** near the page title).
+**Downloadable PDF (A4):** `releases/Smart-Livestock-Asset-Stack-Pakistan-Ammar-Jamshed-v1.pdf` in the GitHub repo — regenerate anytime with `npm run build:pdf`.
+{% endhint %}
+
+{% hint style="warning" %}
+GitBook also offers page Actions → **Export as PDF** on [the GitBook mirror](https://livestockmon.gitbook.io/smart-livestock-asset-stack/).
 {% endhint %}
 
 ## For readers (on the published site)
