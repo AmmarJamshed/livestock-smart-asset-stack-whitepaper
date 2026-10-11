@@ -5,38 +5,38 @@ description: One-page claim for the Smart Livestock Asset Stack
 # Executive summary
 
 {% hint style="success" %}
-**The claim in one line:** Field identity already works in Pakistan — what is missing is a **smart stack** that promotes it into registry, health, tokens, and a market grid.
+**One-line claim:** Pakistan already has farm-gate digital identity — what is missing is a **barn-to-board stack** that turns it into bankable, attestable, market-visible assets.
 {% endhint %}
 
 ## The smart process (SLAS)
 
-**SLAS — Smart Livestock Asset Stack** — five layers:
+**SLAS — Smart Livestock Asset Stack** — five farm-to-market layers:
 
-| Layer | Job | Example rails |
+| Layer | Farm metaphor | Job |
 | --- | --- | --- |
-| **L0** Field capture | Bind animal ↔ owner | Animal Passport; PAITS |
-| **L1** Registry company | Legal system of record | Purpose-built company; CDC sub (phased) |
-| **L2** Health feeds | Certified risk signals | Vet/lab protocols; AKUH path; MoH / livestock |
-| **L3** Tokenization | Transferable claims | PVARA-aligned rules |
-| **L4** Market grid | Daily value + visibility | PSX info/listing; CDC custody |
+| **L0** Field | Ear tag / muzzle scan | Animal Passport; PAITS |
+| **L1** Registry | Title desk | Legal system of record; CDC sub (phased) |
+| **L2** Health | Vet desk | Certified daily grades |
+| **L3** Token | Herd / flock share | PVARA-aligned mint |
+| **L4** Grid | Market board | Daily value feeds → PSX / CDC |
 
 ```mermaid
 %%{init: {'theme':'base'}}%%
 flowchart TB
-  subgraph L0["L0 Field — teal"]
+  subgraph L0["L0 Barn gate"]
     AP[Animal Passport]
     PA[PAITS]
   end
-  subgraph L1["L1 Legal — green"]
+  subgraph L1["L1 Title desk"]
     REG[Registry company]
   end
-  subgraph L2["L2 Clinical — amber"]
+  subgraph L2["L2 Vet desk"]
     HF[Health assessment feeds]
   end
-  subgraph L3["L3 Capital — sky"]
+  subgraph L3["L3 Herd share"]
     TOK[PVARA tokens]
   end
-  subgraph L4["L4 Markets — forest"]
+  subgraph L4["L4 Market board"]
     GRID[Livestock grid]
     PSX[PSX]
     CDC[CDC]
@@ -48,32 +48,32 @@ flowchart TB
   TOK --> GRID
   GRID --> PSX
   TOK --> CDC
-  classDef t fill:#CCFBF1,stroke:#0F766E,color:#134E4A
-  classDef g fill:#DCFCE7,stroke:#15803D,color:#14532D
-  classDef a fill:#FEF3C7,stroke:#D97706,color:#78350F
-  classDef s fill:#E0F2FE,stroke:#0284C7,color:#0C4A6E
-  classDef f fill:#BBF7D0,stroke:#166534,color:#14532D
-  class AP,PA t
-  class REG g
-  class HF a
-  class TOK s
-  class GRID,PSX,CDC f
+  classDef barn fill:#E9F5EE,stroke:#1B4332,color:#081C15
+  classDef title fill:#D8F3DC,stroke:#2D6A4F,color:#081C15
+  classDef vet fill:#FFF3CD,stroke:#B7791F,color:#5C3B00
+  classDef share fill:#D6EAF8,stroke:#1D6A9F,color:#0B3C5D
+  classDef board fill:#95D5B2,stroke:#1B4332,color:#081C15
+  class AP,PA barn
+  class REG title
+  class HF vet
+  class TOK share
+  class GRID,PSX,CDC board
 ```
 
 ## Why this is novel
 
 {% hint style="info" %}
-Pieces exist in isolation. **The novelty is vertical integration** — identity good enough after a flood must also be good enough for an insurer, a token issuer, and a custody rail.
+Apps, traceability pilots, exchanges, and virtual-asset talk already exist. **Novelty = wiring them into one farm-to-market process.**
 {% endhint %}
 
 ## What success looks like
 
-- Biometrically verified animal **promoted** into a registry company record
-- Record carries a **health grade** on a defined cadence
-- Only passing animals/batches underpin a **PVARA-compliant token**
-- A **daily value feed** publishes prices with verified-inventory %
+- Verified animal **promoted** into a registry title
+- Title carries a **vet-desk health grade** on a defined clock
+- Only passing stock underpins a **PVARA-compliant token**
+- A **daily value board** publishes prices with verified-inventory %
 - Banks/insurers price credit and cover off the stack — not notebooks
 
 {% hint style="warning" %}
-**Not** a product pitch, buy/sell recommendation, or claim that named institutions have agreed to participate.
+Not a product pitch, buy/sell call, or claim that named institutions have signed on.
 {% endhint %}
