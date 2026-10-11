@@ -1,0 +1,17 @@
+{
+  "name": "livestock-smart-asset-stack-whitepaper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Smart Livestock Asset Stack — independent whitepaper (farm-to-market site)",
+  "author": "Ammar Jamshed",
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "build:site": "node build/site.mjs",
+    "serve": "npx --yes serve site -l 4173"
+  },
+  "devDependencies": {
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0"
+  }
+}
