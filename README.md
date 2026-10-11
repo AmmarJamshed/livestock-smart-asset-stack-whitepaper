@@ -6,49 +6,69 @@ description: Independent whitepaper — Smart Livestock Asset Stack for Pakistan
 
 ### From Biometric Passport to Exchange Rails in Pakistan
 
-**An independent whitepaper on digitizing, certifying, tokenizing, and pricing livestock & poultry assets**
+{% hint style="success" %}
+**Independent research by Ammar Jamshed** — personal work, no bank / exchange / ministry / vendor affiliation or endorsement.
+{% endhint %}
+
+{% hint style="info" %}
+**Live site:** [livestockmon.gitbook.io/smart-livestock-asset-stack](https://livestockmon.gitbook.io/smart-livestock-asset-stack/) · Use page Actions → **Export as PDF** when enabled.
+{% endhint %}
 
 | | |
 | --- | --- |
 | **Author** | Ammar Jamshed |
 | **Status** | Independent research note (v1.0) |
-| **Stance** | Personal work — no institutional affiliation, endorsement, or mandate |
 | **Focus** | Pakistan livestock & poultry market infrastructure |
-| **Live GitBook** | [livestockmon.gitbook.io/smart-livestock-asset-stack](https://livestockmon.gitbook.io/smart-livestock-asset-stack/) |
+| **Stack name** | **SLAS** — Smart Livestock Asset Stack |
 
 ---
 
 ## What this paper proposes
 
-A **smart process** that turns living animals and poultry flocks into **bankable, attestable, and market-visible assets** by stacking five layers:
+A **smart process** that turns living animals and poultry flocks into **bankable, attestable, and market-visible assets** in five coloured layers:
 
-1. **Field identity** — platforms such as Animal Passport (biometric muzzle ID) and PAITS (national traceability)
-2. **Registry company** — legal system of record (not informal “access”)
-3. **Health assessment feeds** — daily clinical / veterinary attestations (proposed rails with partners such as AKUH standards and Ministry of Health / livestock ministries)
-4. **PVARA-aligned tokenization** — mint only when identity + health pass
-5. **Livestock & poultry grid** — daily value feeds with PSX visibility and phased CDC custody
+| Layer | Colour cue | Job |
+| --- | --- | --- |
+| **L0 Field** | Teal | Animal Passport / PAITS capture |
+| **L1 Registry** | Green | Legal company system of record |
+| **L2 Health** | Amber | Certified daily assessment feeds |
+| **L3 Token** | Sky | PVARA-aligned mint gates |
+| **L4 Grid** | Forest | Daily value feeds → PSX / CDC |
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#CCFBF1', 'primaryTextColor':'#134E4A', 'primaryBorderColor':'#0F766E', 'lineColor':'#0F766E', 'secondaryColor':'#FEF3C7', 'tertiaryColor':'#DCFCE7'}}}%%
 flowchart LR
-  A[Field passport / PAITS] --> B[Registry company]
-  B --> C[Health feeds]
-  C --> D[PVARA tokens]
-  D --> E[Grid + PSX / CDC]
+  A[L0 Field<br/>Passport / PAITS] --> B[L1 Registry<br/>company]
+  B --> C[L2 Health<br/>daily feeds]
+  C --> D[L3 Token<br/>PVARA]
+  D --> E[L4 Grid<br/>PSX / CDC]
+  classDef l0 fill:#CCFBF1,stroke:#0F766E,color:#134E4A,stroke-width:2px
+  classDef l1 fill:#DCFCE7,stroke:#15803D,color:#14532D,stroke-width:2px
+  classDef l2 fill:#FEF3C7,stroke:#D97706,color:#78350F,stroke-width:2px
+  classDef l3 fill:#E0F2FE,stroke:#0284C7,color:#0C4A6E,stroke-width:2px
+  classDef l4 fill:#BBF7D0,stroke:#166534,color:#14532D,stroke-width:2px
+  class A l0
+  class B l1
+  class C l2
+  class D l3
+  class E l4
 ```
 
-## How to read this GitBook
+## Pick your path
 
-| If you want… | Start here |
+| If you want… | Go here |
 | --- | --- |
 | The one-page claim | [Executive summary](01-executive-summary.md) |
-| Diagrams of the full flow | [Architecture & flows](08-architecture.md) |
-| A practical build path | [How to achieve it](09-roadmap.md) |
-| Who wrote this & independence | [About the author](about-the-author.md) · [Disclaimer](independence-and-disclaimer.md) |
-| **PDF download** | [Download PDF](download-pdf.md) |
+| Why animals stay unbankable | [The problem](02-the-problem.md) |
+| Field apps (Animal Passport) | [Field identity](03-field-identity.md) |
+| Full flow diagrams | [Architecture & flows](08-architecture.md) |
+| Build sequence | [How to achieve it](09-roadmap.md) |
+| Author + independence | [About](about-the-author.md) · [Disclaimer](independence-and-disclaimer.md) |
+| **PDF** | [Download PDF](download-pdf.md) |
 
-## Independence (read this first)
-
-This whitepaper is published by **Ammar Jamshed as an independent author**. It is **not** issued by, commissioned by, or endorsed by any bank, exchange, hospital, ministry, regulator, university, or technology vendor — including any current or former employer. Named institutions appear only as **proposed counterparties or public reference points** in a market-design discussion. See [Independence & disclaimer](independence-and-disclaimer.md).
+{% hint style="warning" %}
+Named institutions (PSX, CDC, PVARA, AKUH, MoH, Animal Passport, PAITS) appear only as **proposed counterparties or public references** — not as partners who have signed this paper.
+{% endhint %}
 
 ## Suggested citation
 

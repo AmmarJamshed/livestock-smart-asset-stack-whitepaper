@@ -4,9 +4,13 @@ description: PVARA-aligned livestock and poultry tokenization
 
 # PVARA tokenization
 
+{% hint style="info" %}
+**L3 — Sky layer.** Tokens mint **only after** L1 identity + L2 health pass. Notebook: **PVARA → Livestock Tokenization & Poultry**.
+{% endhint %}
+
 ## Role in the stack
 
-Tokenization is **L3**. It creates transferable economic claims on verified living assets or batches — **only after** L1 identity and L2 health pass. Notebook anchor: **PVARA → Livestock Tokenization & Poultry**.
+Tokenization creates transferable economic claims on verified living assets or batches — **only after** L1 identity and L2 health pass.
 
 ```mermaid
 stateDiagram-v2

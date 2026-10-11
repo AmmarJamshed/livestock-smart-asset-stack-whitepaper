@@ -4,62 +4,57 @@ description: Animal Passport, PAITS, and the capture edge of the stack
 
 # Field identity: Animal Passport & PAITS
 
-## Role in the stack
-
-Field platforms are **L0 — capture and verification**. They are not the registry company, not the exchange, and not the token issuer. They are how living animals enter the smart process.
+{% hint style="info" %}
+**Role:** L0 — capture and verification. Not the registry, not the exchange, not the token issuer. This is how living animals **enter** the smart process.
+{% endhint %}
 
 ```mermaid
-flowchart TB
-  F[Farmer / aggregator] --> SCAN[Muzzle / tag / PAITS registration]
-  SCAN --> PASS[Digital animal record]
-  PASS --> VERIFY[Field verification]
-  VERIFY --> PROMOTE[Promote to registry company]
+%%{init: {'theme':'base'}}%%
+flowchart LR
+  F[Farmer] --> SCAN[Muzzle / tag / PAITS]
+  SCAN --> PASS[Digital record]
+  PASS --> VERIFY[Field verify]
+  VERIFY --> PROMOTE[Promote]
   PROMOTE --> L1[L1 Legal ID]
+  classDef teal fill:#CCFBF1,stroke:#0F766E,color:#134E4A,stroke-width:2px
+  classDef green fill:#DCFCE7,stroke:#15803D,color:#14532D,stroke-width:2px
+  class F,SCAN,PASS,VERIFY teal
+  class PROMOTE,L1 green
 ```
 
-## Animal Passport (private / product edge)
+## Animal Passport — private product edge
 
-[Animal Passport](https://www.animalpassport.co/) is a Pakistan-rooted livestock platform that emphasizes:
+{% hint style="success" %}
+Pakistan-rooted biometric livestock platform: muzzle/nose ID, owner binding, health/breeding history, APIs, flood-recovery identity.
+{% endhint %}
 
-- AI **muzzle / nose biometric** identity (nose prints as animal “fingerprints”)
-- Owner registration and animal verification
-- Health, breeding, and ownership history
-- Farm management tooling and **API** hooks for other systems
-- Practical use in **flood recovery**, when paper records are gone
-
-Public coverage has described free farmer access in Pakistan, founder-led flood registration drives, and reported registration volumes / test accuracy figures. Treat press numbers as **directional**, and re-verify with primary data before citing in a regulator briefing.
-
-**How it assists SLAS**
-
-| SLAS need | Assistance |
+| SLAS need | How it assists |
 | --- | --- |
-| Unique living asset | Biometric ID + optional tag number |
-| Owner binding | Owner account + contact details |
-| Continuity after disaster | Cloud identity survives lost tags/notebooks |
-| Machine integration | Verification API for registry / insurers |
-| Health raw events | Farm-side history and scoring as inputs to L2 |
+| Unique living asset | Biometric ID + optional tag |
+| Owner binding | Owner account + contacts |
+| Disaster continuity | Cloud ID survives lost tags |
+| Integration | Verification API |
+| Health raw events | Farm history → L2 inputs |
 
-## PAITS (public / policy edge)
+## PAITS — public policy edge
 
-The [Pakistan Animal Identification & Traceability System (PAITS)](https://pitb.gov.pk/node/9773) — developed by PITB with FAO for the Government of Pakistan — provides a **national livestock database** (web + mobile) for identification, registration, tracing, health check, and real-time monitoring.
+{% hint style="warning" %}
+**PAITS** (PITB + FAO for GoP): national ID, tracing, health check, monitoring — **government data gravity**. Map private biometric IDs to PAITS keys (dual-rail).
+{% endhint %}
 
-**How it assists SLAS**
+## Integration models
 
-- Supplies **government data gravity** and traceability legitimacy
-- Offers a public-sector path for provincial rollout
-- Should be treated as a **mapping target** for private biometric IDs (dual-rail), not ignored
-
-## Integration models (choose for the pilot)
-
-| Model | Idea | Best when |
+| Model | Idea | Prefer when |
 | --- | --- | --- |
-| **A — Edge vendor** | Passport-class apps onboard; registry is system of record | Fast multi-vendor pilot |
-| **B — Dual-rail** | PAITS = national backbone; Animal Passport = biometric UX / ops | Need legitimacy + innovation |
-| **C — Licensed operator** | Registry licenses one capture agent per province/species | Deep MVP control |
-| **D — Standards-only** | Any certified app may feed the grid | Long-term open market |
+| **A** Edge vendor | Apps onboard; registry is SoR | Fast multi-vendor pilot |
+| **B** Dual-rail | PAITS + Animal Passport | Legitimacy + innovation |
+| **C** Licensed operator | One capture agent / province | Deep MVP |
+| **D** Standards-only | Any certified app | Open long-term market |
 
-**Independent recommendation for v1:** start with **B (dual-rail)** in one province and one species — private biometric UX for farmers, PAITS keys for public traceability, registry company as legal promote target.
+{% hint style="success" %}
+**v1 recommendation:** Model **B (dual-rail)** — one province, one species.
+{% endhint %}
 
-## Writing guardrail
-
-Do **not** claim Animal Passport or PAITS are already connected to PSX, CDC, PVARA, or AKUH unless you hold a signed MoU. In this paper they are **proposed edge systems**.
+{% hint style="danger" %}
+Do **not** claim Animal Passport or PAITS are already wired to PSX, CDC, PVARA, or AKUH without a signed MoU.
+{% endhint %}

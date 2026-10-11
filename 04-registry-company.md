@@ -4,9 +4,13 @@ description: Legal registry company design — system of record
 
 # Registry company
 
+{% hint style="success" %}
+**L1 — Legal spine.** Your notes correctly struck “Access” and circled **company**. A query portal is not enough.
+{% endhint %}
+
 ## Notebook origin
 
-Your notes correctly struck **“Access”** and circled **“company.”** A query portal is not enough. Pakistan needs a **registry company** — a legal person that issues and maintains animal / batch identities, governs who may read or write them, and can interface with custody (CDC sub) and health rails.
+Pakistan needs a **registry company** — a legal person that issues and maintains animal / batch identities, governs who may read or write them, and can interface with custody (CDC sub) and health rails.
 
 ## Job of the registry
 

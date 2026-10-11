@@ -4,11 +4,17 @@ description: About Ammar Jamshed — independent author
 
 # About the author
 
+{% hint style="success" %}
+**Ammar Jamshed** — independent researcher & writer. This whitepaper is personal work only.
+{% endhint %}
+
 ## Ammar Jamshed
 
-**Independent researcher & writer** focused on data, market infrastructure, and practical digitization problems in Pakistan’s real economy.
+Focused on data, market infrastructure, and practical digitization problems in Pakistan’s real economy.
 
-This whitepaper is published in a **personal capacity**. Institutional names that appear in the author’s professional history are listed only for **background context**. They are **not** sponsors, employers-of-record for this work, co-authors, or endorsing bodies.
+{% hint style="warning" %}
+Institutional names in the author’s background are **context only** — not sponsors, employers-of-record for this work, co-authors, or endorsing bodies.
+{% endhint %}
 
 ### Background (context only)
 

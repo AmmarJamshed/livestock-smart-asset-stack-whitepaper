@@ -4,7 +4,11 @@ description: Practical phased roadmap to achieve SLAS
 
 # How to achieve it: roadmap
 
-This chapter turns the architecture into a **build sequence**. It assumes an independent convenor (author / working group) — **not** an institutional mandate.
+{% hint style="info" %}
+**Build sequence** for an independent convenor — not an institutional mandate.
+{% endhint %}
+
+This chapter turns the architecture into phases you can actually run.
 
 ## Phase 0 — Paper & coalition (4–8 weeks)
 

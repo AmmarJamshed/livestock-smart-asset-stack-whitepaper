@@ -4,9 +4,13 @@ description: Livestock and poultry grid with daily value feeds
 
 # Livestock & poultry grid
 
+{% hint style="success" %}
+**L4 — Forest layer.** National aggregation into **daily value feeds**. Notebook: Grid → daily value feeds → PSX (+ CDC, phased).
+{% endhint %}
+
 ## Role in the stack
 
-The grid is **L4** — the national aggregation layer that turns fragmented farm-gate and mandi observations into **daily value feeds**. Notebook: *Livestock & Poultry Grid — for daily value feeds — PSX (+ CDC)*.
+The grid turns fragmented farm-gate and mandi observations into **daily value feeds**. Listing and custody stay separable.
 
 ```mermaid
 flowchart LR

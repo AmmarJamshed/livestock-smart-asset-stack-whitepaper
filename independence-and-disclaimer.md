@@ -4,9 +4,13 @@ description: Independence statement and legal-style disclaimer
 
 # Independence & disclaimer
 
+{% hint style="danger" %}
+**Independent whitepaper** by Ammar Jamshed alone — not an institutional publication.
+{% endhint %}
+
 ## Independence statement
 
-**The Smart Livestock Asset Stack** is an **independent whitepaper** authored solely by **Ammar Jamshed**.
+**The Smart Livestock Asset Stack** is authored solely by **Ammar Jamshed**.
 
 It is **not**:
 

@@ -4,6 +4,10 @@ description: Daily health feeds and clinical attestation rails
 
 # Health assessment & daily feeds
 
+{% hint style="warning" %}
+**L2 — Amber layer.** Raw farm notes are inputs. Market-grade **daily health feeds** need attestation lenders and token gates can trust.
+{% endhint %}
+
 ## Role in the stack
 
 Health is **L2**. Raw farm notes (including AI scores from passport-class apps) are **inputs**. Market-grade **daily health feeds** require an attestation model that lenders and token gates can trust.

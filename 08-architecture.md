@@ -4,35 +4,32 @@ description: End-to-end SLAS architecture and process flows
 
 # End-to-end architecture & flows
 
+{% hint style="info" %}
+This chapter is the **visual spine** of the whitepaper — follow the coloured layers from farm to market.
+{% endhint %}
+
 ## Layer map
 
 ```mermaid
+%%{init: {'theme':'base'}}%%
 flowchart TB
-  subgraph Edge["Edge / L0"]
+  subgraph Edge["Edge / L0 — teal"]
     AP[Animal Passport]
     PEERS[Other certified apps]
     PAITS[PAITS]
   end
-  subgraph Core["Core / L1–L2"]
+  subgraph Core["Core / L1–L2 — green & amber"]
     REG[Registry company]
     HEALTH[Health feed service]
-    STD[Protocol standards body]
+    STD[Protocol standards]
   end
-  subgraph Capital["Capital / L3–L4"]
+  subgraph Capital["Capital / L3–L4 — sky & forest"]
     ISSUER[Token issuer]
-    PVARA[PVARA rule perimeter]
-    GRID[Value grid / oracle]
+    PVARA[PVARA perimeter]
+    GRID[Value grid]
     PSX[PSX]
     CDC[CDC]
   end
-  subgraph Users["Users"]
-    F[Farmers]
-    B[Banks]
-    I[Insurers]
-    INV[Investors]
-  end
-  F --> AP
-  F --> PAITS
   AP --> REG
   PEERS --> REG
   PAITS --> REG
@@ -46,13 +43,19 @@ flowchart TB
   HEALTH --> GRID
   ISSUER --> GRID
   GRID --> PSX
-  B --> REG
-  I --> HEALTH
-  INV --> PSX
-  INV --> CDC
+  classDef teal fill:#CCFBF1,stroke:#0F766E,color:#134E4A
+  classDef green fill:#DCFCE7,stroke:#15803D,color:#14532D
+  classDef amber fill:#FEF3C7,stroke:#D97706,color:#78350F
+  classDef sky fill:#E0F2FE,stroke:#0284C7,color:#0C4A6E
+  classDef forest fill:#BBF7D0,stroke:#166534,color:#14532D
+  class AP,PEERS,PAITS teal
+  class REG green
+  class HEALTH,STD amber
+  class ISSUER,PVARA sky
+  class GRID,PSX,CDC forest
 ```
 
-## Happy path: cow (or flock) becomes a priced, custody-ready claim
+## Happy path
 
 ```mermaid
 sequenceDiagram
@@ -67,54 +70,44 @@ sequenceDiagram
   Farmer->>Passport: Register + muzzle verify
   Passport->>Registry: Promote field ID
   Registry-->>Farmer: Canonical registry ID
-  Farmer->>Health: Vet / lab attestation cycle
-  Health-->>Registry: Grade A/B attached
-  Issuer->>Registry: Check mint gate
-  Issuer->>Health: Check grade validity
-  Issuer-->>Issuer: Mint token under PVARA rules
+  Farmer->>Health: Vet / lab attestation
+  Health-->>Registry: Grade A/B
+  Issuer->>Registry: Mint gate check
+  Issuer->>Health: Grade validity
+  Issuer-->>Issuer: Mint under PVARA rules
   Issuer->>Market: Book-entry (CDC phase)
-  Grid->>Registry: Pull verified inventory
-  Grid->>Market: Publish daily value feed
-  Market-->>Farmer: Price visibility / financing options
+  Grid->>Registry: Verified inventory
+  Grid->>Market: Daily value feed
+  Market-->>Farmer: Price / financing options
 ```
 
-## Control flow: when something goes wrong
+## When something goes wrong
 
 ```mermaid
 flowchart TD
-  E1[Dispute filed] --> F1[Freeze transfers]
+  E1[Dispute] --> F1[Freeze transfers]
   E2[Health quarantine] --> F1
   E3[Biometric mismatch] --> F1
   F1 --> R{Resolve}
-  R -->|Owner confirmed| U1[Unfreeze + audit note]
+  R -->|Confirmed| U1[Unfreeze + audit]
   R -->|Health cleared| U1
-  R -->|Fraud / death| BURN[Burn / settle / write-off path]
-  R -->|Unresolved| ESC[Escrow + local hearing]
+  R -->|Fraud / death| BURN[Burn / settle]
+  R -->|Unresolved| ESC[Escrow hearing]
+  classDef bad fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D
+  classDef warn fill:#FFEDD5,stroke:#D97706,color:#7C2D12
+  classDef ok fill:#DCFCE7,stroke:#15803D,color:#14532D
+  class E1,E2,E3,BURN bad
+  class F1,ESC,R warn
+  class U1 ok
 ```
 
-## Achievement checklist (architecture readiness)
+## Readiness checklist
 
 | Capability | Ready when… |
 | --- | --- |
 | Capture | ≥1 certified edge app writing promotes |
-| Legal ID | Registry company live with ACL + audit log |
-| Health | Protocol v0.1 published; ≥1 attestor network |
-| Token | Mint gate enforced in code + legal docs |
-| Grid | Daily feed auto-publishes with methodology note |
-| Market | At least Stage-1 PSX information product **or** private benchmark with bank consumers |
-
-## Reference deployment topology (logical)
-
-```text
-[Mobile edge] → [Promote API] → [Registry service]
-                                      ↓
-                              [Health feed service] ← [Attestor portal]
-                                      ↓
-                              [Issuer / token service] → [CDC adapter]
-                                      ↓
-                              [Grid publisher] → [PSX data channel]
-                                      ↓
-                              [Bank / insurer query API]
-```
-
-All components can start as separate services behind a single pilot operator; they should remain **logically separable** so no vendor lock-in collapses the stack.
+| Legal ID | Registry live with ACL + audit log |
+| Health | Protocol v0.1 + attestor network |
+| Token | Mint gate enforced in code + docs |
+| Grid | Daily feed with methodology note |
+| Market | Stage-1 PSX info product **or** private benchmark used by a bank |
