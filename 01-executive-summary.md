@@ -8,6 +8,10 @@ description: One-page claim for the Smart Livestock Asset Stack
 **One-line claim:** Pakistan already has farm-gate digital identity — what is missing is a **barn-to-board stack** that turns it into bankable, attestable, market-visible assets.
 {% endhint %}
 
+{% hint style="warning" %}
+**Execution rule:** Pakistan must roll this out in **phases** — identity first, then health, then sandbox tokens, then value feeds / PSX talks, then province-by-province scale. Not a big-bang national launch.
+{% endhint %}
+
 ## The smart process (SLAS)
 
 **SLAS — Smart Livestock Asset Stack** — five farm-to-market layers:
@@ -73,6 +77,19 @@ Apps, traceability pilots, exchanges, and virtual-asset talk already exist. **No
 - Only passing stock underpins a **PVARA-compliant token**
 - A **daily value board** publishes prices with verified-inventory %
 - Banks/insurers price credit and cover off the stack — not notebooks
+
+## How Pakistan should execute (phases, not all at once)
+
+| Phase | Focus | Unlock next only when… |
+| --- | --- | --- |
+| **0** | Coalition + one province / species | Pilot geography and partners named |
+| **1** | Identity + registry | 1,000+ clean IDs, low dispute rate |
+| **2** | Health feeds | Most pilot stock has live grades |
+| **3** | Token **sandbox** | Clean mint/burn, no double-count |
+| **4** | Value grid + PSX info talks | 60 days of honest feeds used by a bank/insurer |
+| **5** | Scale to more provinces | Phase 4 stays green for a full quarter |
+
+Full detail: [How to achieve it: roadmap](09-roadmap.md).
 
 {% hint style="warning" %}
 Not a product pitch, buy/sell call, or claim that named institutions have signed on.

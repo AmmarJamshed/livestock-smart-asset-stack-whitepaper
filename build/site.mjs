@@ -99,7 +99,8 @@ function pageShell({ title, body, toc, nav, activeSlug, isHome }) {
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#1b4332"/>
 <title>${escapeHtml(title)} · Smart Livestock Asset Stack</title>
 <meta name="description" content="Independent farm-to-market whitepaper: biometric passport, registry, health feeds, PVARA tokens, and livestock grid for Pakistan."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -112,6 +113,7 @@ function pageShell({ title, body, toc, nav, activeSlug, isHome }) {
 <body class="${isHome ? 'is-home' : 'is-page'}">
 <a class="skip" href="#main">Skip to content</a>
 <div class="app-shell">
+  <div class="nav-backdrop" data-nav-backdrop hidden></div>
   <header class="topbar">
     <a class="brand" href="${BASE}/">
       <span class="brand-mark" aria-hidden="true">SL</span>
@@ -121,15 +123,18 @@ function pageShell({ title, body, toc, nav, activeSlug, isHome }) {
       </span>
     </a>
     <div class="topbar-actions">
-      <span class="ear-tag">Independent</span>
-      <a class="btn ghost" href="${BASE}/pages/download-pdf/">PDF</a>
-      <a class="btn solid" href="${BASE}/pages/executive-summary/">Enter yard</a>
+      <span class="ear-tag hide-sm">Independent</span>
+      <a class="btn ghost hide-sm" href="${BASE}/pages/download-pdf/">PDF</a>
+      <a class="btn solid hide-sm" href="${BASE}/pages/executive-summary/">Enter yard</a>
     </div>
-    <button class="nav-toggle" type="button" aria-label="Open navigation" data-nav-toggle>☰</button>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button>
   </header>
 
-  <aside class="rail" data-rail>
-    <p class="rail-kicker">Herd map</p>
+  <aside class="rail" data-rail id="herd-map">
+    <div class="rail-head">
+      <p class="rail-kicker">Herd map</p>
+      <button type="button" class="rail-close" data-nav-close aria-label="Close menu">Close</button>
+    </div>
     ${nav}
     <div class="rail-foot">
       <p>Ammar Jamshed · Independent</p>
@@ -142,6 +147,13 @@ function pageShell({ title, body, toc, nav, activeSlug, isHome }) {
   </main>
 
   ${tocHtml ? `<aside class="toc-rail">${tocHtml}</aside>` : '<aside class="toc-rail empty"></aside>'}
+
+  <nav class="mobile-dock" aria-label="Quick links">
+    <a href="${BASE}/">Home</a>
+    <a href="${BASE}/pages/executive-summary/">Summary</a>
+    <a href="${BASE}/pages/how-to-achieve-it-roadmap/">Phases</a>
+    <a href="${BASE}/pages/download-pdf/">PDF</a>
+  </nav>
 </div>
 <script>window.__SLAS_ACTIVE__=${JSON.stringify(activeSlug || '')};window.__SLAS_BASE__=${JSON.stringify(BASE)};</script>
 </body>
@@ -189,9 +201,10 @@ function homeBody(items) {
     <p class="eyebrow">Pakistan · Livestock & poultry · Independent whitepaper</p>
     <h1>Smart Livestock<br/><span>Asset Stack</span></h1>
     <p class="lede">A farm-ops view of how biometric identity, health grades, tokens, and a national value grid can turn living animals into bankable assets — without institutional allegiance.</p>
+    <p class="phase-pill">Pakistan must execute in <strong>phases</strong> — not all at once.</p>
     <div class="hero-cta">
       <a class="btn solid" href="${BASE}/pages/executive-summary/">Read the claim</a>
-      <a class="btn ghost" href="${BASE}/pages/end-to-end-architecture-and-flows/">See the yard map</a>
+      <a class="btn ghost" href="${BASE}/pages/how-to-achieve-it-roadmap/">See the phases</a>
     </div>
     <p class="byline">By <strong>Ammar Jamshed</strong> · Personal research · Not affiliated with any bank, exchange, or ministry</p>
   </div>
@@ -214,11 +227,11 @@ function homeBody(items) {
 
 <section class="layer-strip">
   <h2>Walk the five gates</h2>
-  <p class="section-lede">Same stack as the whitepaper — shown like a livestock ops console.</p>
-  <div class="layer-grid">
+  <p class="section-lede">Same stack as the whitepaper — shown like a livestock ops console. Swipe on phone.</p>
+  <div class="layer-grid" role="list">
     ${layers
       .map(
-        (l) => `<a class="layer-card tone-${l.tone}" href="${BASE}/pages/${l.href}/">
+        (l) => `<a class="layer-card tone-${l.tone}" href="${BASE}/pages/${l.href}/" role="listitem">
       <span class="layer-code">${l.code}</span>
       <strong>${l.name}</strong>
       <span>${l.desc}</span>
@@ -226,6 +239,20 @@ function homeBody(items) {
       )
       .join('')}
   </div>
+</section>
+
+<section class="phase-strip">
+  <h2>Execute in phases — not all at once</h2>
+  <p class="section-lede">Pakistan should unlock each gate only after the previous one proves itself.</p>
+  <div class="phase-scroller" role="list">
+    <a class="phase-card" href="${BASE}/pages/how-to-achieve-it-roadmap/" role="listitem"><span>0</span><strong>Coalition</strong><em>Pick one province + species</em></a>
+    <a class="phase-card" href="${BASE}/pages/how-to-achieve-it-roadmap/" role="listitem"><span>1</span><strong>Identity</strong><em>Registry + passport promote</em></a>
+    <a class="phase-card" href="${BASE}/pages/how-to-achieve-it-roadmap/" role="listitem"><span>2</span><strong>Health</strong><em>Daily grades that stick</em></a>
+    <a class="phase-card" href="${BASE}/pages/how-to-achieve-it-roadmap/" role="listitem"><span>3</span><strong>Token sandbox</strong><em>No public rush</em></a>
+    <a class="phase-card" href="${BASE}/pages/how-to-achieve-it-roadmap/" role="listitem"><span>4</span><strong>Value grid</strong><em>Feeds before PSX listing</em></a>
+    <a class="phase-card" href="${BASE}/pages/how-to-achieve-it-roadmap/" role="listitem"><span>5</span><strong>Scale</strong><em>Next province only after proof</em></a>
+  </div>
+  <p class="phase-cta"><a class="btn solid" href="${BASE}/pages/how-to-achieve-it-roadmap/">Open full phased roadmap</a></p>
 </section>
 
 <section class="chapter-strip">
@@ -253,10 +280,27 @@ function writeCss() {
 function writeJs() {
   const js = `document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('[data-nav-toggle]');
+  const closeBtn = document.querySelector('[data-nav-close]');
   const rail = document.querySelector('[data-rail]');
-  if (toggle && rail) {
-    toggle.addEventListener('click', () => rail.classList.toggle('open'));
-  }
+  const backdrop = document.querySelector('[data-nav-backdrop]');
+  const setOpen = (open) => {
+    if (!rail) return;
+    rail.classList.toggle('open', open);
+    document.body.classList.toggle('nav-open', open);
+    if (backdrop) backdrop.hidden = !open;
+    if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  if (toggle && rail) toggle.addEventListener('click', () => setOpen(!rail.classList.contains('open')));
+  if (closeBtn) closeBtn.addEventListener('click', () => setOpen(false));
+  if (backdrop) backdrop.addEventListener('click', () => setOpen(false));
+  rail?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  document.querySelectorAll('.paper table').forEach((table) => {
+    if (table.parentElement?.classList.contains('table-scroll')) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'table-scroll';
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+  });
   if (window.mermaid) {
     mermaid.initialize({
       startOnLoad: true,
