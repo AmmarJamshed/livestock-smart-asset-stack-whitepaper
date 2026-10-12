@@ -11,6 +11,10 @@ description: Independent whitepaper — Smart Livestock Asset Stack for Pakistan
 Independent research by **Ammar Jamshed** — no bank, exchange, ministry, or vendor allegiance.
 {% endhint %}
 
+{% hint style="warning" %}
+**Pakistan must execute in phases — not all at once.** Identity first, then health, then token sandbox, then value feeds / PSX talks, then province-by-province scale. See the [roadmap](09-roadmap.md).
+{% endhint %}
+
 {% hint style="success" %}
 **Primary reading site (livestock ops UX):** [ammarjamshed.github.io/livestock-smart-asset-stack-whitepaper](https://ammarjamshed.github.io/livestock-smart-asset-stack-whitepaper/)
 {% endhint %}
