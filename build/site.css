@@ -46,9 +46,13 @@ body {
 
 .app-shell {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr) 220px;
+  grid-template-columns: clamp(220px, 20vw, 280px) minmax(0, 1fr) clamp(180px, 16vw, 240px);
   grid-template-rows: auto 1fr;
   min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
 }
 
 .topbar {
@@ -214,8 +218,17 @@ body {
 .main {
   grid-row: 2;
   grid-column: 2;
-  padding: 1.5rem 1.75rem 3rem;
+  padding: clamp(1rem, 2vw, 1.75rem) clamp(0.9rem, 2.2vw, 2rem) 3rem;
   min-width: 0;
+  max-width: 100%;
+}
+.main > .paper,
+.is-home .main > section {
+  max-width: 920px;
+  margin-inline: auto;
+}
+.is-home .main > .hero {
+  max-width: 1100px;
 }
 
 .toc-rail {
@@ -228,7 +241,21 @@ body {
   height: calc(100vh - 68px);
   overflow: auto;
 }
-.toc-rail.empty { border: 0; }
+.toc-rail.empty {
+  border: 0;
+  padding: 0;
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.is-home .app-shell {
+  grid-template-columns: clamp(220px, 20vw, 280px) minmax(0, 1fr);
+}
+@media (min-width: 1440px) {
+  .is-home .app-shell {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+}
 .toc-label {
   margin: 0 0 0.6rem;
   text-transform: uppercase;
@@ -251,8 +278,8 @@ body {
 /* Home hero — livestock console */
 .hero {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.9fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
   align-items: stretch;
   margin-bottom: 2rem;
   animation: rise 0.6s ease both;
@@ -342,6 +369,11 @@ body {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.75rem;
   margin-top: 1rem;
+}
+@supports (grid-template-columns: repeat(auto-fit, minmax(0, 1fr))) {
+  .layer-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
 .layer-card {
   display: flex;
@@ -566,16 +598,67 @@ body {
 }
 .mobile-dock { display: none; }
 
-@media (max-width: 1100px) {
-  .app-shell { grid-template-columns: 250px minmax(0, 1fr); }
-  .toc-rail { display: none; }
-  .layer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* ===== Wide desktop (≥1440px) ===== */
+@media (min-width: 1440px) {
+  .app-shell {
+    grid-template-columns: 300px minmax(0, 1fr) 260px;
+  }
+  .main > .paper,
+  .is-home .main > section:not(.hero) {
+    max-width: 980px;
+  }
+  .is-home .main > .hero { max-width: 1180px; }
+  .layer-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .phase-scroller {
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-columns: unset;
+    overflow: visible;
+  }
 }
+
+/* ===== Laptop / small desktop (992–1199px) ===== */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .app-shell {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+  .toc-rail { display: none; }
+  .hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+  }
+  .layer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .chapter-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rail { padding: 1rem 0.75rem 1.5rem; }
+  .nav-link { font-size: 0.88rem; padding: 0.5rem 0.55rem; }
+}
+
+/* ===== Tablet landscape / compact laptop (861–991px) ===== */
+@media (max-width: 991px) and (min-width: 861px) {
+  .app-shell {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+  .toc-rail { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-panel { max-width: 520px; }
+  .layer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .topbar-actions .ear-tag { display: none; }
+}
+
+/* ===== Tablet / phone (≤860px) ===== */
 @media (max-width: 860px) {
   .app-shell {
     grid-template-columns: 1fr;
     padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
+  .toc-rail { display: none; }
   .topbar {
     padding: 0.7rem 0.85rem;
     padding-top: calc(0.7rem + env(safe-area-inset-top, 0px));
@@ -638,6 +721,10 @@ body {
   .main {
     padding: 0.85rem 0.85rem 1.25rem;
   }
+  .main > .paper,
+  .is-home .main > section {
+    max-width: none;
+  }
   .paper {
     padding: 1rem 0.95rem 1.4rem;
     border-radius: 16px;
@@ -677,8 +764,17 @@ body {
     gap: 0.2rem;
   }
 }
+
+/* ===== Narrow phone (≤420px) ===== */
 @media (max-width: 420px) {
   .phase-scroller { grid-auto-columns: minmax(140px, 78vw); }
   .ear-tags { gap: 0.35rem; }
   .ear-tag { font-size: 0.72rem; }
+  .brand-text strong { font-size: 0.95rem; }
+}
+
+/* Prefer readable diagrams on all devices */
+.mermaid-wrap svg {
+  max-width: 100%;
+  height: auto;
 }
